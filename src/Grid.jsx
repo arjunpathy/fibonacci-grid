@@ -7,9 +7,8 @@ const FIBONACCI_SEQUENCE = [1, 1, 2, 3, 5];
 const len = FIBONACCI_SEQUENCE.length;
 
 const Grid = () => {
-  const [grid, setGrid] = useState(
-    Array.from({ length: GRID_LENGTH }, () => Array(GRID_LENGTH).fill(0))
-  );
+
+  const [grid, setGrid] = useState(Array.from({ length: GRID_LENGTH }, () => Array(GRID_LENGTH).fill(0)));
   const [highlightedCells, setHighlightedCells] = useState([]);
   const [fibonacciCells, setFibonacciCells] = useState([]);
 
@@ -38,8 +37,9 @@ const Grid = () => {
 
     for (let i = 0; i < GRID_LENGTH; i++) {
       for (let j = 0; j < GRID_LENGTH; j++) {
-
-        if (newGrid[i][j] === FIBONACCI_SEQUENCE[len - 1]) {                    // check for fibonacci only if the last fibonacci number is present
+        
+        // check for fibonacci only if the last fibonacci number is present in grid to avoid unnecessary checks
+        if (newGrid[i][j] === FIBONACCI_SEQUENCE[len - 1]) {       
 
           // Left to Right"
           if (j >= len - 1) {
@@ -90,7 +90,7 @@ const Grid = () => {
     setFibonacciCells([]);
   };
 
-  const isFibonacci = (arr) =>{return  arr.every((ele, index) => ele === FIBONACCI_SEQUENCE[index]);}
+  const isFibonacci = (arr) =>{return  arr.every((ele, index) => ele === FIBONACCI_SEQUENCE[index]);} // returns true if the arr is a fibonacci sequence
 
   return (
     <div
