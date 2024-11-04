@@ -13,10 +13,11 @@
 }
 
 .highlight {
-  background-color: yellow; 
+  background-color: yellow;
   transition: background-color 0.5s ease;
 }
+
 .fibonacci {
-  background-color: seagreen; 
+  background-color: seagreen;
   transition: background-color 0.5s ease;
 }
